@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sudoku Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .container-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .container {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        #instructions {
+            flex: 1;
+            max-width: 350px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-wrapper">
+        <div class="container" id="divide">
+            <div class="header">
+                <h1>Sudoku</h1>
+                <div class="top-info">
+                    <div id="timer">Time: 00:00</div>
+                    <div id="score">Score: 0</div>
+                </div>
+            </div>
+
+            <div class="difficulty-selector">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+
+            <div id="sudoku-grid"></div>
+
+            <div class="controls">
+                <button id="solve-button"><i class="fas fa-check"></i> Solve</button>
+                <button id="clear-button"><i class="fas fa-times"></i> Clear</button>
+                <button id="hint-button"><i class="fas fa-question"></i> Hint</button>
+            </div>
+        </div>
+        
+        <div id="instructions">
+            <h2>How to Play</h2>
+            <p>Fill in the empty cells with numbers from 1 to 9.</p>
+            <p>Each row, column, and 3x3 block must contain all numbers from 1 to 9 without repetition.</p>
+            <p>Use the "Solve" button to automatically solve the puzzle.</p>
+            <p>Use the "Clear" button to reset the puzzle.</p>
+            <p>Use the "Hint" button to get help with a cell.</p>
+            <p>Keep an eye on the timer and score to track your progress!</p>
+        </div>
+    </div>
+
+    <div id="message" style="display: none;"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
